@@ -2,24 +2,19 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>ncnn在window平台的使用方法 - H2O</title>
+<title>Tag: ncnn - H2O</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="ncnn是一种轻量的前向推理框架，广泛应用于移动端，而本篇博客主要介绍了其在pc端的使用方式。 1.编译protobuf 下载地址：https://github.com/google/protobuf/archive/v3.4.0.zip 编译工具：vs2015 x64 本机工具命令提示符 123456&amp;gt; cd &amp;lt;protobuf-root-dir&amp;gt;&amp;gt; mkdir buil">
-<meta name="keywords" content="ncnn">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ncnn在window平台的使用方法">
-<meta property="og:url" content="http://yoursite.com/2019/07/01/ncnn在window平台的使用方法/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="H2O">
+<meta property="og:url" content="http://yoursite.com/tags/ncnn/index.html">
 <meta property="og:site_name" content="H2O">
-<meta property="og:description" content="ncnn是一种轻量的前向推理框架，广泛应用于移动端，而本篇博客主要介绍了其在pc端的使用方式。 1.编译protobuf 下载地址：https://github.com/google/protobuf/archive/v3.4.0.zip 编译工具：vs2015 x64 本机工具命令提示符 123456&amp;gt; cd &amp;lt;protobuf-root-dir&amp;gt;&amp;gt; mkdir buil">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-07-01T04:19:35.307Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ncnn在window平台的使用方法">
-<meta name="twitter:description" content="ncnn是一种轻量的前向推理框架，广泛应用于移动端，而本篇博客主要介绍了其在pc端的使用方式。 1.编译protobuf 下载地址：https://github.com/google/protobuf/archive/v3.4.0.zip 编译工具：vs2015 x64 本机工具命令提示符 123456&amp;gt; cd &amp;lt;protobuf-root-dir&amp;gt;&amp;gt; mkdir buil">
+<meta name="twitter:title" content="H2O">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -94,7 +89,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="ncnn在window平台的使用方法" height="28">
+                <img src="/images/logo.svg" alt="H2O" height="28">
             
             </a>
         </div>
@@ -138,6 +133,17 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">Tags</a></li>
+            <li class="is-active"><a href="#" aria-current="page">ncnn</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
     
     <div class="card-content article ">
         
@@ -158,7 +164,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                ncnn在window平台的使用方法
+                <a class="has-link-black-ter" href="/2019/07/01/ncnn在window平台的使用方法/">ncnn在window平台的使用方法</a>
             
         </h1>
         <div class="content">
@@ -183,15 +189,6 @@
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">D:\ncnn-20190628\benchmark&gt;benchncnn.exe</span><br><span class="line">[0 GeForce GTX 970]  queueC=0[16]  queueT=1[2]  memU=4294967295  memDL=7  memHV=</span><br><span class="line">9</span><br><span class="line">[0 GeForce GTX 970]  fp16p=1  fp16s=1  fp16a=0  int8s=1  int8a=1</span><br><span class="line">loop_count = 4</span><br><span class="line">num_threads = 4</span><br><span class="line">powersave = 0</span><br><span class="line">gpu_device = -1</span><br><span class="line">          squeezenet  min =   43.21  max =   46.93  avg =   44.39</span><br><span class="line">     squeezenet_int8  min =   57.67  max =   70.70  avg =   61.82</span><br><span class="line">           mobilenet  min =   53.84  max =   68.20  avg =   59.21</span><br><span class="line">      mobilenet_int8  min =   88.39  max =   96.28  avg =   92.16</span><br><span class="line">        mobilenet_v2  min =   60.08  max =   62.36  avg =   61.50</span><br><span class="line">          shufflenet  min =   17.35  max =   18.38  avg =   17.76</span><br><span class="line">             mnasnet  min =   49.47  max =   52.29  avg =   50.60</span><br><span class="line">     proxylessnasnet  min =   65.89  max =   66.47  avg =   66.20</span><br><span class="line">           googlenet  min =  132.48  max =  135.69  avg =  133.85</span><br><span class="line">      googlenet_int8  min =  191.08  max =  194.21  avg =  192.58</span><br><span class="line">            resnet18  min =  126.42  max =  128.72  avg =  127.54</span><br><span class="line">       resnet18_int8  min =  162.66  max =  170.55  avg =  165.19</span><br><span class="line">             alexnet  min =   90.18  max =  258.30  avg =  159.68</span><br><span class="line">               vgg16  min =  856.14  max =  878.42  avg =  863.20</span><br><span class="line">          vgg16_int8  min = 1119.27  max = 1130.59  avg = 1124.57</span><br><span class="line">            resnet50  min =  302.27  max =  313.23  avg =  306.50</span><br><span class="line">       resnet50_int8  min =  428.14  max =  431.83  avg =  430.05</span><br></pre></td></tr></table></figure>
         </div>
         
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/ncnn/">ncnn</a>
-                </div>
-            </div>
-        </div>
-        
         
         
     </div>
@@ -199,34 +196,7 @@
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
-        <div class="buttons is-centered">
-            
-                
-<a class="button is-info donate">
-    <span class="icon is-small">
-        <i class="fab fa-alipay"></i>
-    </span>
-    <span>Alipay</span>
-    <div class="qrcode"><img src="/images/ali.jpg" alt="Alipay"></div>
-</a>
 
-                
-                
-<a class="button is-success donate">
-    <span class="icon is-small">
-        <i class="fab fa-weixin"></i>
-    </span>
-    <span>Wechat</span>
-    <div class="qrcode"><img src="/images/wechat.jpg" alt="Wechat"></div>
-</a>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
@@ -547,7 +517,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="ncnn在window平台的使用方法" height="28">
+                    <img src="/images/logo.svg" alt="H2O" height="28">
                 
                 </a>
                 <p class="is-size-7">
