@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="ncnn是一种轻量的前向推理框架，广泛应用于移动端，而本篇博客主要介绍了其在pc端的使用方式。 1.编译protobuf 下载地址：https://github.com/google/protobuf/archive/v3.4.0.zip 编译工具：vs2015 x64 本机工具命令提示符 123456&amp;gt; cd &amp;lt;protobuf-root-dir&amp;gt;&amp;gt; mkdir buil">
+    <meta name="description" content="ncnn是一种轻量的前向推理框架，广泛应用于移动端，而本篇博客主要介绍了其在pc端的使用方式。 1.编译protobuf 下载地址：点击进入下载 编译工具：vs2015 x64 本机工具命令提示符 123456&amp;gt; cd &amp;lt;protobuf-root-dir&amp;gt;&amp;gt; mkdir build-vs2015&amp;gt; cd build-vs2015&amp;gt; cmake -G&amp;quot;">
 <meta name="keywords" content="ncnn">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ncnn在window平台的使用方法">
 <meta property="og:url" content="http://yoursite.com/2019/07/01/ncnn在window平台的使用方法/index.html">
 <meta property="og:site_name" content="H2O">
-<meta property="og:description" content="ncnn是一种轻量的前向推理框架，广泛应用于移动端，而本篇博客主要介绍了其在pc端的使用方式。 1.编译protobuf 下载地址：https://github.com/google/protobuf/archive/v3.4.0.zip 编译工具：vs2015 x64 本机工具命令提示符 123456&amp;gt; cd &amp;lt;protobuf-root-dir&amp;gt;&amp;gt; mkdir buil">
+<meta property="og:description" content="ncnn是一种轻量的前向推理框架，广泛应用于移动端，而本篇博客主要介绍了其在pc端的使用方式。 1.编译protobuf 下载地址：点击进入下载 编译工具：vs2015 x64 本机工具命令提示符 123456&amp;gt; cd &amp;lt;protobuf-root-dir&amp;gt;&amp;gt; mkdir build-vs2015&amp;gt; cd build-vs2015&amp;gt; cmake -G&amp;quot;">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-07-01T04:19:35.307Z">
+<meta property="og:updated_time" content="2019-07-01T04:53:16.833Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ncnn在window平台的使用方法">
-<meta name="twitter:description" content="ncnn是一种轻量的前向推理框架，广泛应用于移动端，而本篇博客主要介绍了其在pc端的使用方式。 1.编译protobuf 下载地址：https://github.com/google/protobuf/archive/v3.4.0.zip 编译工具：vs2015 x64 本机工具命令提示符 123456&amp;gt; cd &amp;lt;protobuf-root-dir&amp;gt;&amp;gt; mkdir buil">
+<meta name="twitter:description" content="ncnn是一种轻量的前向推理框架，广泛应用于移动端，而本篇博客主要介绍了其在pc端的使用方式。 1.编译protobuf 下载地址：点击进入下载 编译工具：vs2015 x64 本机工具命令提示符 123456&amp;gt; cd &amp;lt;protobuf-root-dir&amp;gt;&amp;gt; mkdir build-vs2015&amp;gt; cd build-vs2015&amp;gt; cmake -G&amp;quot;">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -149,7 +149,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    14 minutes read (About 2155 words)
+                    14 minutes read (About 2165 words)
                 </span>
                 
                 
@@ -164,12 +164,12 @@
         <div class="content">
             <p><a href="https://github.com/Tencent/ncnn" target="_blank" rel="noopener">ncnn</a>是一种轻量的前向推理框架，广泛应用于移动端，而本篇博客主要介绍了其在pc端的使用方式。</p>
 <p>1.编译protobuf</p>
-<p>下载地址：<a href="https://github.com/google/protobuf/archive/v3.4.0.zip" target="_blank" rel="noopener">https://github.com/google/protobuf/archive/v3.4.0.zip</a></p>
+<p>下载地址：<a href="https://github.com/google/protobuf/archive/v3.4.0.zip" target="_blank" rel="noopener">点击进入下载</a></p>
 <p>编译工具：vs2015 x64 本机工具命令提示符</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd &lt;protobuf-root-dir&gt;</span><br><span class="line">&gt; mkdir build-vs2015</span><br><span class="line">&gt; cd build-vs2015</span><br><span class="line">&gt; cmake -G&quot;NMake Makefiles&quot; -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%cd%/install -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_MSVC_STATIC_RUNTIME=OFF ../cmake</span><br><span class="line">&gt; nmake</span><br><span class="line">&gt; nmake install</span><br></pre></td></tr></table></figure>
 
 <p>2.安装vulkan(pc上支持gpu加速)</p>
-<p>下载地址：<a href="https://vulkan.lunarg.com/sdk/home" target="_blank" rel="noopener">https://vulkan.lunarg.com/sdk/home</a> </p>
+<p>下载地址：<a href="https://vulkan.lunarg.com" target="_blank" rel="noopener">https://vulkan.lunarg.com</a></p>
 <p>3.编译ncnn</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd &lt;ncnn-root-dir&gt;</span><br><span class="line">&gt; mkdir -p build-vs2015</span><br><span class="line">&gt; cd build-vs2015</span><br><span class="line">&gt; cmake -G&quot;NMake Makefiles&quot; -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%cd%/install -DProtobuf_INCLUDE_DIR=&lt;protobuf-root-dir&gt;/build-vs2015/install/include -DProtobuf_LIBRARIES=&lt;protobuf-root-dir&gt;/build-vs2015/install/lib/libprotobuf.lib -DProtobuf_PROTOC_EXECUTABLE=&lt;protobuf-root-dir&gt;/build-vs2017/install/bin/protoc.exe -DNCNN_VULKAN=ON ..</span><br><span class="line"></span><br><span class="line">&gt; nmake</span><br><span class="line">&gt; nmake install</span><br></pre></td></tr></table></figure>
 
