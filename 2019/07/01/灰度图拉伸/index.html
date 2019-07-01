@@ -2,19 +2,24 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Archives: 2019/7 - H2O</title>
+<title>灰度图拉伸 - H2O</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="H2O">
-<meta property="og:url" content="http://yoursite.com/archives/2019/07/index.html">
+    <meta name="description" content="在OCR识别的时候，有时候由于背景和目标颜色太过于接近，而灰度拉伸就能发挥其作用，以下图展示了拉伸前和拉伸后的图像以及灰度直方图：  实现代码如下： 123456789101112131415161718192021222324252627282930313233343536#coding=utfimport cv2def grey_scale(image,threshold):    img_g">
+<meta name="keywords" content="图像拉伸">
+<meta property="og:type" content="article">
+<meta property="og:title" content="灰度图拉伸">
+<meta property="og:url" content="http://yoursite.com/2019/07/01/灰度图拉伸/index.html">
 <meta property="og:site_name" content="H2O">
+<meta property="og:description" content="在OCR识别的时候，有时候由于背景和目标颜色太过于接近，而灰度拉伸就能发挥其作用，以下图展示了拉伸前和拉伸后的图像以及灰度直方图：  实现代码如下： 123456789101112131415161718192021222324252627282930313233343536#coding=utfimport cv2def grey_scale(image,threshold):    img_g">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-07-01T08:38:28.885Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="H2O">
+<meta name="twitter:title" content="灰度图拉伸">
+<meta name="twitter:description" content="在OCR识别的时候，有时候由于背景和目标颜色太过于接近，而灰度拉伸就能发挥其作用，以下图展示了拉伸前和拉伸后的图像以及灰度直方图：  实现代码如下： 123456789101112131415161718192021222324252627282930313233343536#coding=utfimport cv2def grey_scale(image,threshold):    img_g">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -89,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="H2O" height="28">
+                <img src="/images/logo.svg" alt="灰度图拉伸" height="28">
             
             </a>
         </div>
@@ -132,46 +137,98 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        July 2019
-        </h3>
-        <div class="timeline">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
         
-            <article class="media">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-07-01T08:01:44.000Z">2019-07-01</time>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-07-01T08:01:44.000Z">2019-07-01</time>
-                        <a href="/2019/07/01/灰度图拉伸/" class="has-link-black-ter is-size-6">灰度图拉伸</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-07-01T03:17:57.000Z">2019-07-01</time>
-                        <a href="/2019/07/01/ncnn在window平台的使用方法/" class="has-link-black-ter is-size-6">ncnn在window平台的使用方法</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 303 words)
+                </span>
+                
+                
+            </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                灰度图拉伸
+            
+        </h1>
+        <div class="content">
+            <p>在OCR识别的时候，有时候由于背景和目标颜色太过于接近，而灰度拉伸就能发挥其作用，以下图展示了拉伸前和拉伸后的图像以及灰度直方图：</p>
+<p><img src="D:%5Cblog_github%5Cblog%5Cpublic%5Cimages%5CFigure_1.png" alt></p>
+<p>实现代码如下：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">#coding=utf</span><br><span class="line">import cv2</span><br><span class="line"></span><br><span class="line">def grey_scale(image,threshold):</span><br><span class="line">    img_gray = cv2.cvtColor(image ,cv2.COLOR_RGB2GRAY)</span><br><span class="line">    rows ,cols = img_gray.shape</span><br><span class="line">    flat_gray = img_gray.reshape((cols * rows,)).tolist()</span><br><span class="line">    #把数组压缩成一维的列表</span><br><span class="line">    flat_gray.sort()</span><br><span class="line">    #将列表从小到大排序</span><br><span class="line">    a = flat_gray[int(threshold * len(flat_gray))]  # threshold%分位数</span><br><span class="line">    b = flat_gray[int((1-threshold) * len(flat_gray))]  # (1-threshold)%分位数</span><br><span class="line">    img_gray[img_gray&lt;a] = 0</span><br><span class="line">    img_gray[img_gray&gt;=b] = 255</span><br><span class="line">    return img_gray</span><br><span class="line"></span><br><span class="line">src = cv2.imread(&apos;test.jpg&apos;)</span><br><span class="line">result = grey_scale(src,threshold=0.30)</span><br><span class="line">cv2.imwrite(&apos;test_result.jpg&apos;,result)</span><br><span class="line">#可视化展示</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import matplotlib</span><br><span class="line">chinfo = matplotlib.font_manager.FontProperties(fname=&apos;C:/Windows/Fonts/msyh.ttc&apos;)</span><br><span class="line">plt.subplot(221)</span><br><span class="line">plt.imshow(src)</span><br><span class="line">plt.title(&apos;原始图&apos;,fontproperties=chinfo)</span><br><span class="line">plt.subplot(222)</span><br><span class="line">plt.imshow(result)</span><br><span class="line">plt.title(&apos;拉伸后结果图&apos;,fontproperties=chinfo)</span><br><span class="line">plt.subplot(223)</span><br><span class="line">plt.hist(src.ravel(), 256)</span><br><span class="line">plt.title(&apos;拉伸前&apos;,fontproperties=chinfo)</span><br><span class="line">plt.subplot(224)</span><br><span class="line">plt.hist(result.ravel(), 256)</span><br><span class="line">plt.title(&apos;拉伸后&apos;,fontproperties=chinfo)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>注：ravel()是将数组压缩成一维，便于画直方图，subplot函数“22*”便是在一张图上画两行两列的图像，依次是221-&gt;222-&gt;223-&gt;224。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/图像拉伸/">图像拉伸</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/ali.jpg" alt="Alipay"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/wechat.jpg" alt="Wechat"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/07/01/ncnn在window平台的使用方法/">
+                <span class="level-item">ncnn在window平台的使用方法</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
     </div>
 </div>
 
@@ -544,7 +601,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="H2O" height="28">
+                    <img src="/images/logo.svg" alt="灰度图拉伸" height="28">
                 
                 </a>
                 <p class="is-size-7">
