@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="在计算机运行过程做加法速度比乘法快,  而在卷积神经网络中存在大量的矩阵乘法运算，此时winograd算法横空出世，能够很好的降低乘法次数，可谓加速的一把利器，其大量应用在前向预测框架上，比如ncnn、mace和mnn等。 ​以一维卷积$F(2,3)$为例，设输入信号为$d=[d_0\quad d_1\quad d_2\quad d_3]^T$, 卷积核为$g=[g_0\quad g_1\quad">
+    <meta name="description" content="在计算机运行过程做加法速度比乘法快,  而在卷积神经网络中存在大量的矩阵乘法运算，此时winograd算法(论文地址)横空出世，能够很好的降低乘法次数，可谓加速的一把利器，其大量应用在前向预测框架上，比如ncnn、mace和mnn等。 ​以一维卷积$F(2,3)$为例，设输入信号为$d=[d_0\quad d_1\quad d_2\quad d_3]^T$, 卷积核为$g=[g_0\quad g_">
 <meta name="keywords" content="winograd">
 <meta property="og:type" content="article">
 <meta property="og:title" content="winograd算法详解">
 <meta property="og:url" content="http://yoursite.com/2019/07/03/winograd算法详解/index.html">
 <meta property="og:site_name" content="H2O">
-<meta property="og:description" content="在计算机运行过程做加法速度比乘法快,  而在卷积神经网络中存在大量的矩阵乘法运算，此时winograd算法横空出世，能够很好的降低乘法次数，可谓加速的一把利器，其大量应用在前向预测框架上，比如ncnn、mace和mnn等。 ​以一维卷积$F(2,3)$为例，设输入信号为$d=[d_0\quad d_1\quad d_2\quad d_3]^T$, 卷积核为$g=[g_0\quad g_1\quad">
+<meta property="og:description" content="在计算机运行过程做加法速度比乘法快,  而在卷积神经网络中存在大量的矩阵乘法运算，此时winograd算法(论文地址)横空出世，能够很好的降低乘法次数，可谓加速的一把利器，其大量应用在前向预测框架上，比如ncnn、mace和mnn等。 ​以一维卷积$F(2,3)$为例，设输入信号为$d=[d_0\quad d_1\quad d_2\quad d_3]^T$, 卷积核为$g=[g_0\quad g_">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-07-03T08:36:54.692Z">
+<meta property="og:updated_time" content="2019-07-03T08:51:11.544Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="winograd算法详解">
-<meta name="twitter:description" content="在计算机运行过程做加法速度比乘法快,  而在卷积神经网络中存在大量的矩阵乘法运算，此时winograd算法横空出世，能够很好的降低乘法次数，可谓加速的一把利器，其大量应用在前向预测框架上，比如ncnn、mace和mnn等。 ​以一维卷积$F(2,3)$为例，设输入信号为$d=[d_0\quad d_1\quad d_2\quad d_3]^T$, 卷积核为$g=[g_0\quad g_1\quad">
+<meta name="twitter:description" content="在计算机运行过程做加法速度比乘法快,  而在卷积神经网络中存在大量的矩阵乘法运算，此时winograd算法(论文地址)横空出世，能够很好的降低乘法次数，可谓加速的一把利器，其大量应用在前向预测框架上，比如ncnn、mace和mnn等。 ​以一维卷积$F(2,3)$为例，设输入信号为$d=[d_0\quad d_1\quad d_2\quad d_3]^T$, 卷积核为$g=[g_0\quad g_">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -149,7 +149,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 454 words)
+                    3 minutes read (About 507 words)
                 </span>
                 
                 
@@ -162,7 +162,7 @@
             
         </h1>
         <div class="content">
-            <p>在计算机运行过程做加法速度比乘法快,  而在卷积神经网络中存在大量的矩阵乘法运算，此时winograd算法横空出世，能够很好的降低乘法次数，可谓加速的一把利器，其大量应用在前向预测框架上，比如ncnn、mace和mnn等。</p>
+            <p>在计算机运行过程做加法速度比乘法快,  而在卷积神经网络中存在大量的矩阵乘法运算，此时winograd算法(<a href="https://arxiv.org/pdf/1509.09308.pdf" target="_blank" rel="noopener">论文地址</a>)横空出世，能够很好的降低乘法次数，可谓加速的一把利器，其大量应用在前向预测框架上，比如ncnn、mace和mnn等。</p>
 <p>​以一维卷积$F(2,3)$为例，设输入信号为$d=[d_0\quad d_1\quad d_2\quad d_3]^T$, 卷积核为$g=[g_0\quad g_1\quad g_2]^T$，滑动步长为1，不做pad操作，则输出结果可以写成             </p>
 
 
@@ -200,14 +200,22 @@ $$
 
 
 <p>可以看到利用winograd算法需要<strong>4次乘法，8次加法</strong>，相比一般矩阵乘法，通过增加加法运算减少乘法的运算，可以实现加速。</p>
-<p>由于winograd算法证明比较复杂暂时不写了，直接丢计算公式，如下</p>
+<p>由于winograd算法证明比较复杂暂时不写了，直接丢计算公式，一维卷积计算公式如下</p>
+
+
+$$Y=A^T\left[[Gg]\bigodot[B^Td]\right]$$
+
+
+
+<p>其中$\bigodot$表示element-wise，$A,G,B$都是根据输出大小和卷积核提前确定好的，$g$表示卷积核，$d$表示输入数据(也就是需要进行卷积计算的数据)。</p>
+<p>对应二维卷积计算公式如下:</p>
 
 
 $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
 
 
 
-<p>其中$\bigodot$表示element-wise，$A,G,B$都是根据输出大小和卷积核提前确定好的，$g$表示卷积核，$d$表示输入数据(也就是需要进行卷积计算的数据)。</p>
+<p>注：如有问题请邮件联系<strong><a href="mailto:996821501@qq.com" target="_blank" rel="noopener">996821501@qq.com</a></strong></p>
 
         </div>
         
