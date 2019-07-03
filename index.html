@@ -139,6 +139,49 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-07-03T06:46:57.000Z">2019-07-03</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 187 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/07/03/winograd算法详解/">winograd算法详解</a>
+            
+        </h1>
+        <div class="content">
+            <p>在计算机运行过程做加法速度比乘法快,  而在卷积神经网络中存在大量的矩阵乘法运算，此时winograd算法横空出世，能够很好的降低乘法次数，可谓加速的一把利器，其大量应用在前向预测框架上，比如ncnn、mace和mnn等。</p>
+<p>以一维卷积$F(2,3)$为例，设输入信号为$d=[d_0\quad d_1\quad d_2\quad d_3]^T$, 卷积核为$g=[g_0\quad g_1\quad g_2]^T$，滑动步长为1，不做pad操作，则输出结果可以写成<br>$$<br>F(2,3)=\left[\begin{array}{ccc}<br>d_0 &amp;d_1  &amp;d_2 \<br>d_1 &amp;d_2  &amp;d_3<br>\end{array}\right]</p>
+<p>\left[\begin{array}{ccc}<br>g_0  \<br>g_1\<br>g_2<br>\end{array}\right]=\left[\begin{array}{c}<br>m_1+m_2+m_3\<br>m_2-m_3-m_4<br>\end{array}\right]<br>$$</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-07-03T05:45:59.000Z">2019-07-03</time>
                 
                 
@@ -326,7 +369,7 @@
                         Entradas
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        4
                     </p>
                 </div>
             </div>
@@ -346,7 +389,7 @@
                         Etiquetas
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        4
                     </p>
                 </div>
             </div>
@@ -420,7 +463,7 @@
         <h3 class="menu-label">
             Nube de etiquetas
         </h3>
-        <a href="/tags/cuda/" style="font-size: 10px;">cuda</a> <a href="/tags/ncnn/" style="font-size: 10px;">ncnn</a> <a href="/tags/图像拉伸/" style="font-size: 10px;">图像拉伸</a>
+        <a href="/tags/cuda/" style="font-size: 10px;">cuda</a> <a href="/tags/ncnn/" style="font-size: 10px;">ncnn</a> <a href="/tags/winograd/" style="font-size: 10px;">winograd</a> <a href="/tags/图像拉伸/" style="font-size: 10px;">图像拉伸</a>
     </div>
 </div>
 
@@ -434,6 +477,25 @@
         <h3 class="menu-label">
             Recientes
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/03/winograd算法详解/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="winograd算法详解">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-03T06:46:57.000Z">2019-07-03</time></div>
+                    <a href="/2019/07/03/winograd算法详解/" class="has-link-black-ter is-size-6">winograd算法详解</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -510,7 +572,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -538,6 +600,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ncnn/">
                         <span class="tag">ncnn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/winograd/">
+                        <span class="tag">winograd</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -574,6 +643,25 @@
         
         <article class="media">
             
+            <a href="/2019/07/03/winograd算法详解/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="winograd算法详解">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-03T06:46:57.000Z">2019-07-03</time></div>
+                    <a href="/2019/07/03/winograd算法详解/" class="has-link-black-ter is-size-6">winograd算法详解</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/07/03/window安装cuda以及cudnn指南/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="window安装cuda以及cudnn指南">
@@ -647,7 +735,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -675,6 +763,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ncnn/">
                         <span class="tag">ncnn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/winograd/">
+                        <span class="tag">winograd</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -786,7 +881,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
