@@ -16,7 +16,7 @@
 <meta property="og:description" content="在计算机运行过程做加法速度比乘法快,  而在卷积神经网络中存在大量的矩阵乘法运算，此时winograd算法(论文地址)横空出世，能够很好的降低乘法次数，可谓加速的一把利器，其大量应用在前向预测框架上，比如ncnn、mace和mnn等。 ​以一维卷积$F(2,3)$为例，设输入信号为$d=[d_0\quad d_1\quad d_2\quad d_3]^T$, 卷积核为$g=[g_0\quad g_">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-07-03T08:51:11.544Z">
+<meta property="og:updated_time" content="2019-07-03T08:56:23.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="winograd算法详解">
 <meta name="twitter:description" content="在计算机运行过程做加法速度比乘法快,  而在卷积神经网络中存在大量的矩阵乘法运算，此时winograd算法(论文地址)横空出世，能够很好的降低乘法次数，可谓加速的一把利器，其大量应用在前向预测框架上，比如ncnn、mace和mnn等。 ​以一维卷积$F(2,3)$为例，设输入信号为$d=[d_0\quad d_1\quad d_2\quad d_3]^T$, 卷积核为$g=[g_0\quad g_">
@@ -149,7 +149,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 507 words)
+                    3 minutes read (About 523 words)
                 </span>
                 
                 
@@ -183,7 +183,7 @@ $$r_1=d_1*g_0+d_2*g_1+d_3*g_2$$
 
 
 
-<p>可以可到如果用一般的矩阵乘法，则需要<strong>6次乘法和4次加法</strong>。</p>
+<p>可以看到如果用一般的矩阵乘法，则需要<strong>6次乘法和4次加法</strong>。</p>
 <p>winograd做法如下</p>
 
 
@@ -207,7 +207,7 @@ $$Y=A^T\left[[Gg]\bigodot[B^Td]\right]$$
 
 
 
-<p>其中$\bigodot$表示element-wise，$A,G,B$都是根据输出大小和卷积核提前确定好的，$g$表示卷积核，$d$表示输入数据(也就是需要进行卷积计算的数据)。</p>
+<p>其中$\bigodot$表示element-wise，$A,G,B$都是根据输出大小和卷积核提前确定好的(有人已经写好了,可参考<a href="https://github.com/andravin/wincnn" target="_blank" rel="noopener">wincnn</a>)，$g$表示卷积核，$d$表示输入数据(也就是需要进行卷积计算的数据)。</p>
 <p>对应二维卷积计算公式如下:</p>
 
 
@@ -237,7 +237,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
 
 <div class="card">
     <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <h3 class="menu-label has-text-centered">Suka dengan artikel ini? Bantu penulis dengan donasi melalui</h3>
         <div class="buttons is-centered">
             
                 
@@ -321,7 +321,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        Entradas
                     </p>
                     <p class="title has-text-weight-normal">
                         4
@@ -331,7 +331,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categories
+                        Categorias
                     </p>
                     <p class="title has-text-weight-normal">
                         0
@@ -341,7 +341,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        Etiquetas
                     </p>
                     <p class="title has-text-weight-normal">
                         4
@@ -351,7 +351,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/dlml" target="_blank">
-                Follow</a>
+                SEGUIR</a>
         </div>
         
         
@@ -403,7 +403,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Categorias
             </h3>
             <ul class="menu-list">
             
@@ -416,7 +416,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Tag Cloud
+            Nube de etiquetas
         </h3>
         <a href="/tags/cuda/" style="font-size: 10px;">cuda</a> <a href="/tags/ncnn/" style="font-size: 10px;">ncnn</a> <a href="/tags/winograd/" style="font-size: 10px;">winograd</a> <a href="/tags/图像拉伸/" style="font-size: 10px;">图像拉伸</a>
     </div>
@@ -430,7 +430,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
@@ -517,7 +517,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -541,7 +541,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -593,7 +593,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
@@ -680,7 +680,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -704,7 +704,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -836,7 +836,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
@@ -882,10 +882,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
+                POSTS: 'Entradas',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
