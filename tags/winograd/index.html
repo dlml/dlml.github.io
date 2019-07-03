@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 187 words)
+                    a minute read (About 194 words)
                 </span>
                 
                 
@@ -169,8 +169,10 @@
         </h1>
         <div class="content">
             <p>在计算机运行过程做加法速度比乘法快,  而在卷积神经网络中存在大量的矩阵乘法运算，此时winograd算法横空出世，能够很好的降低乘法次数，可谓加速的一把利器，其大量应用在前向预测框架上，比如ncnn、mace和mnn等。</p>
-<p>以一维卷积$F(2,3)$为例，设输入信号为$d=[d_0\quad d_1\quad d_2\quad d_3]^T$, 卷积核为$g=[g_0\quad g_1\quad g_2]^T$，滑动步长为1，不做pad操作，则输出结果可以写成<br>$$<br>F(2,3)=\left[\begin{array}{ccc}<br>d_0 &amp;d_1  &amp;d_2 \<br>d_1 &amp;d_2  &amp;d_3<br>\end{array}\right]</p>
-<p>\left[\begin{array}{ccc}<br>g_0  \<br>g_1\<br>g_2<br>\end{array}\right]=\left[\begin{array}{c}<br>m_1+m_2+m_3\<br>m_2-m_3-m_4<br>\end{array}\right]<br>$$</p>
+<p>以一维卷积$F(2,3)$为例，设输入信号为$d=[d_0\quad d_1\quad d_2\quad d_3]^T$, 卷积核为$g=[g_0\quad g_1\quad g_2]^T$，滑动步长为1，不做pad操作，则输出结果可以写成</p>
+<p>​                               $F(2,3)=\left[\begin{array}{ccc}d_0 &amp;d_1  &amp;d_2 \d_1 &amp;d_2  &amp;d_3\end{array}\right]\left[\begin{array}{ccc}g_0  \g_1\g_2\end{array}\right]=\left[\begin{array}{c}r_0\r_1\end{array}\right]$</p>
+<p>其中</p>
+<p>​                $r_0=d_0<em>g_0+d_1</em>g_1+d_2*g_2$</p>
 
         </div>
         
