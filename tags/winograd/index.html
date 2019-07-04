@@ -175,19 +175,16 @@
 $$d=[d_0\quad d_1\quad d_2\quad d_3]^T$$
 
 
-
 <p>卷积核为</p>
 
 
 $g=[g_0\quad g_1\quad g_2]^T$
 
 
-
 <p>滑动步长为1，不做pad操作，则输出结果可以写成             </p>
 
 
 $$F(2,3)=\left[\begin{array}{ccc}d_0 &d_1  &d_2 \\d_1 &d_2  &d_3\end{array}\right]\left[\begin{array}{ccc}g_0  \\g_1\\g_2\end{array}\right]=\left[\begin{array}{c}r_0\\r_1\end{array}\right]$$
-
 
 
 <p>其中</p>
@@ -198,9 +195,7 @@ $$r_0=d_0*g_0+d_1*g_1+d_2*g_2$$
 
 
 
-
 $$r_1=d_1*g_0+d_2*g_1+d_3*g_2$$
-
 
 
 <p>可以看到如果用一般的矩阵乘法，则需要<strong>6次乘法和4次加法</strong>。</p>
@@ -210,7 +205,6 @@ $$r_1=d_1*g_0+d_2*g_1+d_3*g_2$$
 $$F(2,3)=\left[\begin{array}{ccc}d_0 &d_1  &d_2 \\d_1 &d_2  &d_3\end{array}\right]\left[\begin{array}{ccc}g_0  \\g_1\\g_2\end{array}\right]=\left[\begin{array}{c}m_1+m_2+m_3\\m_2-m_3-m_4\end{array}\right]$$
 
 
-
 <p>其中</p>
 
 $$
@@ -218,13 +212,11 @@ m_1=(d_0-d_2)g_0, \quad m_2=(d_1+d_2)\frac{g_0+g_1+g_2}{2}\\
 m_4=(d_1-d_3)g_2, \quad m_3=(d_2-d_1)\frac{g_0-g_1+g_2}{2}\\
 $$
 
-
 <p>可以看到利用winograd算法需要<strong>4次乘法，8次加法</strong>，相比一般矩阵乘法，通过增加加法运算减少乘法的运算，可以实现加速。</p>
 <p>由于winograd算法证明比较复杂暂时不写了，直接丢计算公式，一维卷积计算公式如下</p>
 
 
 $$Y=A^T\left[[Gg]\bigodot[B^Td]\right]$$
-
 
 
 <p>其中$\bigodot$表示element-wise，$A,G,B$都是根据输出大小和卷积核提前确定好的(有人已经写好了,可参考<a href="https://github.com/andravin/wincnn" target="_blank" rel="noopener">wincnn</a>)，$g$表示卷积核，$d$表示输入数据(也就是需要进行卷积计算的数据)。</p>
@@ -234,8 +226,7 @@ $$Y=A^T\left[[Gg]\bigodot[B^Td]\right]$$
 $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
 
 
-
-<p>注：如有问题请邮件联系<strong><a href="mailto:996821501@qq.com" target="_blank" rel="noopener">996821501@qq.com</a></strong></p>
+<p>注：如有问题请邮件联系<strong>996821501@qq.com</strong></p>
 
         </div>
         
@@ -294,7 +285,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -314,7 +305,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -388,7 +379,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/cuda/" style="font-size: 10px;">cuda</a> <a href="/tags/gpu/" style="font-size: 10px;">gpu</a> <a href="/tags/ncnn/" style="font-size: 10px;">ncnn</a> <a href="/tags/winograd/" style="font-size: 10px;">winograd</a> <a href="/tags/图像拉伸/" style="font-size: 10px;">图像拉伸</a>
+        <a href="/tags/cuda/" style="font-size: 10px;">cuda</a> <a href="/tags/gpu/" style="font-size: 10px;">gpu</a> <a href="/tags/ncnn/" style="font-size: 10px;">ncnn</a> <a href="/tags/winograd/" style="font-size: 10px;">winograd</a> <a href="/tags/图像拉伸/" style="font-size: 10px;">图像拉伸</a> <a href="/tags/学术成果/" style="font-size: 10px;">学术成果</a>
     </div>
 </div>
 
@@ -402,6 +393,25 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/04/master期间的一些学术成果/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="master期间的一些学术成果">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T09:06:39.000Z">2019-07-04</time></div>
+                    <a href="/2019/07/04/master期间的一些学术成果/" class="has-link-black-ter is-size-6">master期间的一些学术成果</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -479,25 +489,6 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/01/ncnn在window平台的使用方法/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="ncnn在window平台的使用方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-01T03:17:57.000Z">2019-07-01</time></div>
-                    <a href="/2019/07/01/ncnn在window平台的使用方法/" class="has-link-black-ter is-size-6">ncnn在window平台的使用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -516,7 +507,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -565,6 +556,13 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
                 <div class="control">
                     <a class="tags has-addons" href="/tags/图像拉伸/">
                         <span class="tag">图像拉伸</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/学术成果/">
+                        <span class="tag">学术成果</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -594,6 +592,25 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
         
         <article class="media">
             
+            <a href="/2019/07/04/master期间的一些学术成果/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="master期间的一些学术成果">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T09:06:39.000Z">2019-07-04</time></div>
+                    <a href="/2019/07/04/master期间的一些学术成果/" class="has-link-black-ter is-size-6">master期间的一些学术成果</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/07/04/测试window上gpu环境/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="测试window上gpu环境是否可用">
@@ -668,25 +685,6 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/01/ncnn在window平台的使用方法/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="ncnn在window平台的使用方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-01T03:17:57.000Z">2019-07-01</time></div>
-                    <a href="/2019/07/01/ncnn在window平台的使用方法/" class="has-link-black-ter is-size-6">ncnn在window平台的使用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -705,7 +703,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -754,6 +752,13 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
                 <div class="control">
                     <a class="tags has-addons" href="/tags/图像拉伸/">
                         <span class="tag">图像拉伸</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/学术成果/">
+                        <span class="tag">学术成果</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
