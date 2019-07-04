@@ -2,7 +2,7 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Etiqueta: winograd - H2O</title>
+<title>Tag: winograd - H2O</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -136,7 +136,7 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/tags">Etiquetas</a></li>
+            <li><a href="/tags">Tags</a></li>
             <li class="is-active"><a href="#" aria-current="page">winograd</a></li>
         </ul>
         </nav>
@@ -168,8 +168,22 @@
             
         </h1>
         <div class="content">
-            <p>在计算机运行过程做加法速度比乘法快,  而在卷积神经网络中存在大量的矩阵乘法运算，此时winograd算法(<a href="https://arxiv.org/pdf/1509.09308.pdf" target="_blank" rel="noopener">论文地址</a>)横空出世，能够很好的降低乘法次数，可谓加速的一把利器，其大量应用在前向预测框架上，比如ncnn、mace和mnn等。</p>
-<p>​以一维卷积$F(2,3)$为例，设输入信号为$d=[d_0\quad d_1\quad d_2\quad d_3]^T$, 卷积核为$g=[g_0\quad g_1\quad g_2]^T$，滑动步长为1，不做pad操作，则输出结果可以写成             </p>
+            <p>在计算机运行过程做加法速度比乘法快,  而在卷积神经网络中存在大量的矩阵乘法运算，winograd算法(<a href="https://arxiv.org/pdf/1509.09308.pdf" target="_blank" rel="noopener">论文地址</a>)横空出世，能够很好的降低乘法次数，可谓加速的一把利器，其大量应用在前向预测框架上，比如ncnn、mace和mnn等。</p>
+<p>以一维卷积$F(2,3)$为例，设输入信号为</p>
+
+
+$$d=[d_0\quad d_1\quad d_2\quad d_3]^T$$
+
+
+
+<p>卷积核为</p>
+
+
+$g=[g_0\quad g_1\quad g_2]^T$
+
+
+
+<p>滑动步长为1，不做pad操作，则输出结果可以写成             </p>
 
 
 $$F(2,3)=\left[\begin{array}{ccc}d_0 &d_1  &d_2 \\d_1 &d_2  &d_3\end{array}\right]\left[\begin{array}{ccc}g_0  \\g_1\\g_2\end{array}\right]=\left[\begin{array}{c}r_0\\r_1\end{array}\right]$$
@@ -277,17 +291,17 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Entradas
+                        Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categorias
+                        Categories
                     </p>
                     <p class="title has-text-weight-normal">
                         0
@@ -297,17 +311,17 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Etiquetas
+                        Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/dlml" target="_blank">
-                SEGUIR</a>
+                Follow</a>
         </div>
         
         
@@ -359,7 +373,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categorias
+                Categories
             </h3>
             <ul class="menu-list">
             
@@ -372,9 +386,9 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nube de etiquetas
+            Tag Cloud
         </h3>
-        <a href="/tags/cuda/" style="font-size: 10px;">cuda</a> <a href="/tags/ncnn/" style="font-size: 10px;">ncnn</a> <a href="/tags/winograd/" style="font-size: 10px;">winograd</a> <a href="/tags/图像拉伸/" style="font-size: 10px;">图像拉伸</a>
+        <a href="/tags/cuda/" style="font-size: 10px;">cuda</a> <a href="/tags/gpu/" style="font-size: 10px;">gpu</a> <a href="/tags/ncnn/" style="font-size: 10px;">ncnn</a> <a href="/tags/winograd/" style="font-size: 10px;">winograd</a> <a href="/tags/图像拉伸/" style="font-size: 10px;">图像拉伸</a>
     </div>
 </div>
 
@@ -386,8 +400,27 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/04/测试window上gpu环境/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="测试window上gpu环境">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T07:53:00.000Z">2019-07-04</time></div>
+                    <a href="/2019/07/04/测试window上gpu环境/" class="has-link-black-ter is-size-6">测试window上gpu环境</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -473,7 +506,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -483,7 +516,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -497,13 +530,20 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/cuda/">
                         <span class="tag">cuda</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/gpu/">
+                        <span class="tag">gpu</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -549,8 +589,27 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/04/测试window上gpu环境/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="测试window上gpu环境">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T07:53:00.000Z">2019-07-04</time></div>
+                    <a href="/2019/07/04/测试window上gpu环境/" class="has-link-black-ter is-size-6">测试window上gpu环境</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -636,7 +695,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -646,7 +705,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -660,13 +719,20 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/cuda/">
                         <span class="tag">cuda</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/gpu/">
+                        <span class="tag">gpu</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -792,7 +858,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
@@ -838,10 +904,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Entradas',
+                POSTS: 'Posts',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categorias',
-                TAGS: 'Etiquetas',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
