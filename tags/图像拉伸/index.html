@@ -172,7 +172,6 @@
 <p><img src="/images//Figure_1.png" alt></p>
 <p>实现代码如下：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">#coding=utf-8</span><br><span class="line">import cv2</span><br><span class="line"></span><br><span class="line">def grey_scale(image,threshold):</span><br><span class="line">    img_gray = cv2.cvtColor(image ,cv2.COLOR_RGB2GRAY)</span><br><span class="line">    rows ,cols = img_gray.shape</span><br><span class="line">    flat_gray = img_gray.reshape((cols * rows,)).tolist()</span><br><span class="line">    #把数组压缩成一维的列表</span><br><span class="line">    flat_gray.sort()</span><br><span class="line">    #将列表从小到大排序</span><br><span class="line">    a = flat_gray[int(threshold * len(flat_gray))]  # threshold%分位数</span><br><span class="line">    b = flat_gray[int((1-threshold) * len(flat_gray))]  # (1-threshold)%分位数</span><br><span class="line">    img_gray[img_gray&lt;a] = 0</span><br><span class="line">    img_gray[img_gray&gt;=b] = 255</span><br><span class="line">    return img_gray</span><br><span class="line"></span><br><span class="line">src = cv2.imread(&apos;test.jpg&apos;)</span><br><span class="line">result = grey_scale(src,threshold=0.30)</span><br><span class="line">cv2.imwrite(&apos;test_result.jpg&apos;,result)</span><br><span class="line">#可视化展示</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import matplotlib</span><br><span class="line">chinfo = matplotlib.font_manager.FontProperties(fname=&apos;C:/Windows/Fonts/msyh.ttc&apos;)</span><br><span class="line">plt.subplot(221)</span><br><span class="line">plt.imshow(src)</span><br><span class="line">plt.title(&apos;原始图&apos;,fontproperties=chinfo)</span><br><span class="line">plt.subplot(222)</span><br><span class="line">plt.imshow(result)</span><br><span class="line">plt.title(&apos;拉伸后结果图&apos;,fontproperties=chinfo)</span><br><span class="line">plt.subplot(223)</span><br><span class="line">plt.hist(src.ravel(), 256)</span><br><span class="line">plt.title(&apos;拉伸前&apos;,fontproperties=chinfo)</span><br><span class="line">plt.subplot(224)</span><br><span class="line">plt.hist(result.ravel(), 256)</span><br><span class="line">plt.title(&apos;拉伸后&apos;,fontproperties=chinfo)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
 <p>注：ravel()是将数组压缩成一维，便于画直方图，subplot函数“22*”便是在一张图上画两行两列的图像，依次是221-&gt;222-&gt;223-&gt;224。</p>
 
         </div>
@@ -232,7 +231,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        7
                     </p>
                 </div>
             </div>
@@ -252,7 +251,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        7
                     </p>
                 </div>
             </div>
@@ -326,7 +325,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/cuda/" style="font-size: 10px;">cuda</a> <a href="/tags/gpu/" style="font-size: 10px;">gpu</a> <a href="/tags/ncnn/" style="font-size: 10px;">ncnn</a> <a href="/tags/winograd/" style="font-size: 10px;">winograd</a> <a href="/tags/图像拉伸/" style="font-size: 10px;">图像拉伸</a> <a href="/tags/学术成果/" style="font-size: 10px;">学术成果</a>
+        <a href="/tags/cuda/" style="font-size: 10px;">cuda</a> <a href="/tags/gpu/" style="font-size: 10px;">gpu</a> <a href="/tags/ncnn/" style="font-size: 10px;">ncnn</a> <a href="/tags/protobuf/" style="font-size: 10px;">protobuf</a> <a href="/tags/winograd/" style="font-size: 10px;">winograd</a> <a href="/tags/图像拉伸/" style="font-size: 10px;">图像拉伸</a> <a href="/tags/学术成果/" style="font-size: 10px;">学术成果</a>
     </div>
 </div>
 
@@ -340,6 +339,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/09/linux安装protobuf/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="linux安装protobuf">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-09T06:44:04.000Z">2019-07-09</time></div>
+                    <a href="/2019/07/09/linux安装protobuf/" class="has-link-black-ter is-size-6">linux安装protobuf</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -417,25 +435,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/01/灰度图拉伸/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="灰度图拉伸">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-01T08:01:44.000Z">2019-07-01</time></div>
-                    <a href="/2019/07/01/灰度图拉伸/" class="has-link-black-ter is-size-6">灰度图拉伸</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -454,7 +453,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -489,6 +488,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ncnn/">
                         <span class="tag">ncnn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/protobuf/">
+                        <span class="tag">protobuf</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -539,6 +545,25 @@
         
         <article class="media">
             
+            <a href="/2019/07/09/linux安装protobuf/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="linux安装protobuf">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-09T06:44:04.000Z">2019-07-09</time></div>
+                    <a href="/2019/07/09/linux安装protobuf/" class="has-link-black-ter is-size-6">linux安装protobuf</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/07/04/master期间的一些学术成果/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="master期间的一些学术成果">
@@ -613,25 +638,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/01/灰度图拉伸/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="灰度图拉伸">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-01T08:01:44.000Z">2019-07-01</time></div>
-                    <a href="/2019/07/01/灰度图拉伸/" class="has-link-black-ter is-size-6">灰度图拉伸</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -650,7 +656,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -685,6 +691,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ncnn/">
                         <span class="tag">ncnn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/protobuf/">
+                        <span class="tag">protobuf</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
