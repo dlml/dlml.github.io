@@ -139,6 +139,51 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-07-12T03:04:13.000Z">2019-07-12</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 147 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/07/12/win7—-64位-关于ncnn的debug版本的编译过程/">win7—(64位)关于ncnn的debug版本的编译过程</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="1-编译生成debug版本的protobuf"><a href="#1-编译生成debug版本的protobuf" class="headerlink" title="1. 编译生成debug版本的protobuf"></a>1. 编译生成debug版本的protobuf</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd &lt;protobuf-root-dir&gt;</span><br><span class="line">&gt; mkdir build-vs2015-debug</span><br><span class="line">&gt; cd build-vs2015-debug</span><br><span class="line">&gt; cmake -G&quot;NMake Makefiles&quot; -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=%cd%/install -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_MSVC_STATIC_RUNTIME=OFF ..</span><br><span class="line">&gt; nmake</span><br><span class="line">&gt; nmake install</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-编译生成debug版本的ncnn"><a href="#2-编译生成debug版本的ncnn" class="headerlink" title="2. 编译生成debug版本的ncnn"></a>2. 编译生成debug版本的ncnn</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd &lt;ncnn-root-dir&gt;</span><br><span class="line">&gt; mkdir build-vs2015-debug</span><br><span class="line">&gt; cd build-vs2015-debug</span><br><span class="line">&gt; cmake -G&quot;NMake Makefiles&quot; -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=%cd%/install -DProtobuf_INCLUDE_DIR=D:/protobuf-3.4.0/build-vs2015-debug/install/include -DProtobuf_LIBRARIES=D:/protobuf-3.4.0/build-vs2015-debug/install/lib/libprotobufd.lib -DProtobuf_PROTOC_EXECUTABLE=D:/protobuf-3.4.0/build-vs2015-debug/install/bin/protoc.exe -DNCNN_VULKAN=ON ..</span><br><span class="line">&gt; nmake</span><br><span class="line">&gt; nmake install</span><br></pre></td></tr></table></figure>
+
+<p>查看build-vs2015-debug下编译生成的ncnn.lib，编译顺利通过的话其大小大约是release版本的3倍。</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-07-09T06:44:04.000Z">2019-07-09</time>
                 
                 
@@ -586,7 +631,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        7
+                        8
                     </p>
                 </div>
             </div>
@@ -606,7 +651,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        7
+                        8
                     </p>
                 </div>
             </div>
@@ -680,7 +725,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/cuda/" style="font-size: 10px;">cuda</a> <a href="/tags/gpu/" style="font-size: 10px;">gpu</a> <a href="/tags/ncnn/" style="font-size: 10px;">ncnn</a> <a href="/tags/protobuf/" style="font-size: 10px;">protobuf</a> <a href="/tags/winograd/" style="font-size: 10px;">winograd</a> <a href="/tags/图像拉伸/" style="font-size: 10px;">图像拉伸</a> <a href="/tags/学术成果/" style="font-size: 10px;">学术成果</a>
+        <a href="/tags/cuda/" style="font-size: 10px;">cuda</a> <a href="/tags/debug/" style="font-size: 10px;">debug</a> <a href="/tags/gpu/" style="font-size: 10px;">gpu</a> <a href="/tags/ncnn/" style="font-size: 10px;">ncnn</a> <a href="/tags/protobuf/" style="font-size: 10px;">protobuf</a> <a href="/tags/winograd/" style="font-size: 10px;">winograd</a> <a href="/tags/图像拉伸/" style="font-size: 10px;">图像拉伸</a> <a href="/tags/学术成果/" style="font-size: 10px;">学术成果</a>
     </div>
 </div>
 
@@ -694,6 +739,25 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/12/win7—-64位-关于ncnn的debug版本的编译过程/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="win7—(64位)关于ncnn的debug版本的编译过程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-12T03:04:13.000Z">2019-07-12</time></div>
+                    <a href="/2019/07/12/win7—-64位-关于ncnn的debug版本的编译过程/" class="has-link-black-ter is-size-6">win7—(64位)关于ncnn的debug版本的编译过程</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -771,25 +835,6 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/03/window安装cuda以及cudnn指南/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="window安装cuda以及cudnn指南">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-03T05:45:59.000Z">2019-07-03</time></div>
-                    <a href="/2019/07/03/window安装cuda以及cudnn指南/" class="has-link-black-ter is-size-6">window安装cuda以及cudnn指南</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -808,7 +853,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">7</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -829,6 +874,13 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
                 <div class="control">
                     <a class="tags has-addons" href="/tags/cuda/">
                         <span class="tag">cuda</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/debug/">
+                        <span class="tag">debug</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -900,6 +952,25 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
         
         <article class="media">
             
+            <a href="/2019/07/12/win7—-64位-关于ncnn的debug版本的编译过程/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="win7—(64位)关于ncnn的debug版本的编译过程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-12T03:04:13.000Z">2019-07-12</time></div>
+                    <a href="/2019/07/12/win7—-64位-关于ncnn的debug版本的编译过程/" class="has-link-black-ter is-size-6">win7—(64位)关于ncnn的debug版本的编译过程</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/07/09/linux安装protobuf/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="linux安装protobuf">
@@ -974,25 +1045,6 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/07/03/window安装cuda以及cudnn指南/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="window安装cuda以及cudnn指南">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-03T05:45:59.000Z">2019-07-03</time></div>
-                    <a href="/2019/07/03/window安装cuda以及cudnn指南/" class="has-link-black-ter is-size-6">window安装cuda以及cudnn指南</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1011,7 +1063,7 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">7</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -1032,6 +1084,13 @@ $$Y=A^T\left[[GgG^T]\bigodot[B^TdB]\right]A$$
                 <div class="control">
                     <a class="tags has-addons" href="/tags/cuda/">
                         <span class="tag">cuda</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/debug/">
+                        <span class="tag">debug</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
